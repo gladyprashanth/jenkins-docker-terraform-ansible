@@ -12,7 +12,7 @@ pipeline {
     stage('BUILD PRASATH') {
       steps{
         script {
-          sh "docker build -t sai/cicd-poc-jenkins-ansible:$BUILD_NUMBER ."
+          sh "docker build -t gladyprashanth/cicd-poc-jenkins-ansible:$BUILD_NUMBER ."
         }
       }
     }
@@ -21,8 +21,7 @@ pipeline {
         script {
           sh "echo $USER"
           sh "docker login -u gladyprashanth -p Prash@911"
-          sh "docker image tag sai vk"
-          sh "docker push vk gladyprashanth/cicd-poc-jenkins-ansible:$BUILD_NUMBER"
+          sh "docker push gladyprashanth/cicd-poc-jenkins-ansible:$BUILD_NUMBER"
           }
         }
       }
